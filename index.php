@@ -70,7 +70,6 @@ function getPassword ($length) {
     $special = [
         "!",
         ",",
-        "£",
         "$",
         "%",
         "/",
