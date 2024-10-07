@@ -1,113 +1,5 @@
 <?php 
-
-function getPassword ($length) {
-    $letters = [
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f",
-        "g",
-        "h",
-        "i",
-        "j",
-        "k",
-        "l",
-        "m",
-        "n",
-        "o",
-        "p",
-        "q",
-        "r",
-        "s",
-        "t",
-        "u",
-        "v",
-        "w",
-        "x",
-        "y",
-        "z",
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "F",
-        "G",
-        "H",
-        "I",
-        "J",
-        "K",
-        "L",
-        "M",
-        "N",
-        "O",
-        "P",
-        "Q",
-        "R",
-        "S",
-        "T",
-        "U",
-        "V",
-        "W",
-        "X",
-        "Y",
-        "Z",
-    ];
-    $numbers = [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        0,
-    ];
-    $special = [
-        "!",
-        ",",
-        "$",
-        "%",
-        "/",
-        ".",
-        "=",
-        "^",
-        "(",
-        ")",
-        "{",
-        "}",
-    ];
-    
-   //return bin2hex(random_bytes($length));
-   $pwString = "";
-   $pwInt = "";
-   $pwSpecial = "";
-   $password = "";
-   
-    for($i = 1; $i <= $length / 3; $i++) {
-         $activeIndex = random_int(0, count($letters) - 1);
-         $pwString .= $letters[$activeIndex];
-    }
-
-    for($i = 1; $i <= $length / 3; $i++) {
-        $activeIndex = random_int(0, count($numbers) - 1);
-        $pwInt .= $numbers[$activeIndex];
-   }
-
-   for($i = 1; $i <= $length / 3; $i++) {
-    $activeIndex = random_int(0, count($special) - 1);
-    $pwSpecial .= $special[$activeIndex];
-    }
-    
-
-    return  ($password .= $pwString . $pwInt . $pwSpecial);
-
-}
-
+require_once __DIR__ . "/functions/functions.php";
 ?>
 
 <!DOCTYPE html>
@@ -134,7 +26,7 @@ function getPassword ($length) {
     <div>
         <p>
             La tua <strong>password</strong> è: <br>
-            <?php echo(getPassword($_GET["pwlength"])) ?>
+            <?php print (getPassword($_GET["pwlength"])) ?>
         </p>
     </div>
 </body>
