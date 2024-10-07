@@ -1,20 +1,5 @@
 <?php 
 
-
-$numbers = [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    0,
-];
-
-
 function getPassword ($length) {
     $letters = [
         "a",
@@ -70,14 +55,57 @@ function getPassword ($length) {
         "Y",
         "Z",
     ];
+    $numbers = [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        0,
+    ];
+    $special = [
+        "!",
+        ",",
+        "£",
+        "$",
+        "%",
+        "/",
+        ".",
+        "=",
+        "^",
+        "(",
+        ")",
+        "{",
+        "}",
+    ];
     
    //return bin2hex(random_bytes($length));
-   $pwLetters = "";
-    for($i = 0; $i <= $length; $i++) {
+   $pwString = "";
+   $pwInt = "";
+   $pwSpecial = "";
+   $password = "";
+   
+    for($i = 1; $i <= $length / 3; $i++) {
          $activeIndex = random_int(0, count($letters) - 1);
-         $pwLetters .= $letters[$activeIndex];
+         $pwString .= $letters[$activeIndex];
     }
-    return $pwLetters;
+
+    for($i = 1; $i <= $length / 3; $i++) {
+        $activeIndex = random_int(0, count($numbers) - 1);
+        $pwInt .= $numbers[$activeIndex];
+   }
+
+   for($i = 1; $i <= $length / 3; $i++) {
+    $activeIndex = random_int(0, count($special) - 1);
+    $pwSpecial .= $special[$activeIndex];
+    }
+    
+    var_dump($password = $pwString . $pwSpecial  . $pwInt);
+
 }
 
 ?>
