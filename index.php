@@ -1,5 +1,8 @@
 <?php 
 
+$pwLength = $_GET["pwlength"];
+// var_dump($pwLength);
+
 ?>
 
 <!DOCTYPE html>
