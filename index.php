@@ -105,7 +105,7 @@ function getPassword ($length) {
     }
     
 
-    return str_shuffle($password .= $pwString . $pwInt . $pwSpecial);
+    return  ($password .= $pwString . $pwInt . $pwSpecial);
 
 }
 
