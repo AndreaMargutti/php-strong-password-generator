@@ -12,7 +12,8 @@
 </head>
 
 <body>
-
+    <h1>Strong Password Generator</h1>
+    <h2>Genera una password sicura</h2>
 </body>
 
 </html>
