@@ -104,7 +104,8 @@ function getPassword ($length) {
     $pwSpecial .= $special[$activeIndex];
     }
     
-    var_dump($password = $pwString . $pwSpecial  . $pwInt);
+
+    return str_shuffle($password .= $pwString . $pwInt . $pwSpecial);
 
 }
 
@@ -132,7 +133,10 @@ function getPassword ($length) {
     </form>
 
     <div>
-        <p><?php echo(getPassword($_GET["pwlength"])) ?></p>
+        <p>
+            La tua <strong>password</strong> è: <br>
+            <?php echo(getPassword($_GET["pwlength"])) ?>
+        </p>
     </div>
 </body>
 
