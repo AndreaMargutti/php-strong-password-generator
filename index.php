@@ -1,7 +1,15 @@
 <?php 
 
-$pwLength = $_GET["pwlength"];
-// var_dump($pwLength);
+$letters = [
+    "a",
+    "b",
+    "c",
+    "d",
+];
+
+function getPassword ($length) {
+   return bin2hex(random_bytes($length));
+}
 
 ?>
 
@@ -25,6 +33,10 @@ $pwLength = $_GET["pwlength"];
         <button type="submit">Invia</button>
         <button type="reset">Annulla</button>
     </form>
+
+    <div>
+        <p><?php echo(getPassword($_GET["pwlength"])) ?></p>
+    </div>
 </body>
 
 </html>
